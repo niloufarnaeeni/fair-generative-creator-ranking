@@ -108,22 +108,6 @@ python train/reranker/train_reranker.py \
   --config train/reranker/config/paper_suppgroup_creator.yaml
 ```
 
-Training outputs are saved under:
-
-```text
-output/<dataset>/run/<timestamp>/
-```
-
-Each run saves:
-
-```text
-run_config.json
-resolved_config.yaml
-source_config.yaml
-model/
-logs/
-```
-
 ---
 
 ## Evaluation
