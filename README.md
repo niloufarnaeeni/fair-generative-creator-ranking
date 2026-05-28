@@ -1,1 +1,0 @@
-# fair-generative-creator-ranking
