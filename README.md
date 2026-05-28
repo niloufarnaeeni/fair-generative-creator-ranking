@@ -1,10 +1,6 @@
-# RAG-Ranking
+# Exposure-Aware Generative Creator Ranking
 
-Research code for **generative creator ranking with exposure-aware objectives**.
-
-This repository supports a Web3 team-formation task where a causal language model generates an ordered list of creator IDs for a given project prompt.
-
-Unlike standard reranking, the model directly generates creator identifiers. Generation is restricted to valid creator tokens plus EOS.
+This repository supports a Web3 creator-ranking task where a causal language model generates an ordered list of creator IDs for a given project prompt.
 
 ---
 
@@ -21,15 +17,6 @@ Each training example contains:
 - `rank`: creator rank when available
 - `yap_score`: creator attention score
 - `yap_bucket`: low, mid, or high attention group
-
-Important assumptions:
-
-- `target_text` contains only relevant creators.
-- `creators` contains both relevant and irrelevant candidates.
-- Creator IDs are added to the tokenizer as tokens.
-- NTP is restricted to all dataset creator tokens plus EOS.
-- KL-based losses are restricted to the current project’s candidate creators.
-- EOS is included in NTP but excluded from project-local KL losses.
 
 ---
 
