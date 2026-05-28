@@ -1,0 +1,11 @@
+Task: Generate the highest-ranked relevant creators for the project.
+
+Project name: {project_name}
+Project description: {project_description}
+Required skills:
+{skill_descriptions}
+
+Return the creator IDs ranked 1 to {k} in the relevant leaderboard for this project.
+The returned creator IDs must follow the exact leaderboard order from higher rank to lower rank.
+Do not repeat any creator.
+Do not output explanations.

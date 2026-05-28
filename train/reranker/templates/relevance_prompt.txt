@@ -1,0 +1,10 @@
+Task: Generate the most relevant creators for the project.
+
+Project name: {project_name}
+Project description: {project_description}
+Required skills:
+{skill_descriptions}
+
+Return the {k} most relevant creator IDs for this project, ordered from most relevant to least relevant.
+Do not repeat any creator.
+Do not output explanations.

@@ -1,0 +1,55 @@
+# Model
+model_name_or_path: "Qwen/Qwen2.5-1.5B-Instruct"
+task_type: "team_formation"
+max_len: 4096
+max_creator_candidates: 128
+attn_implementation: "sdpa"
+
+# Paper method
+method_name: "fairgroup"
+lambda_ntp: 1.0
+lambda_kl: 1.0
+alpha_fair: 0.35
+lambda_kl_creator: 0.0
+
+# PEFT
+use_lora: 1
+use_qlora: 0
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - "q_proj"
+  - "k_proj"
+  - "v_proj"
+  - "o_proj"
+
+# Dataset
+train_dataset: "../../../data/kaito/train.jsonl"
+val_dataset: "../../../data/kaito/valid.jsonl"
+project_name_key: "project_name"
+project_description_key: "project_description"
+required_skills_key: "required_skills"
+creators_key: "creators"
+team_key: "team_creator_ids"
+creator_id_key: "creator_id"
+creator_yap_key: "yap_score"
+creator_rank_key: "rank"
+
+# Training
+output_dir: "./output/paper"
+save_on_epoch_end: 0
+num_max_checkpoints: 2
+epochs: 20
+early_stopping_patience: 3
+lr: 2e-4
+batch_size: 4
+seed: 42
+warmup_proportion: 0.1
+stable_proportion: 0.5
+gradient_accumulation_steps: 8
+mixed_precision: bf16
+
+# Logging
+log_interval: 1
+log_with: "tensorboard"
